@@ -101,5 +101,15 @@
             ]).addTo(mymap).bindPopup("Geger Kalong");
 			
 			var popup = L.popup();
+			
+			function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(mymap);
+            }
+            //Inisiasi event onclick pada event di map
+            mymap.on('click', onMapClick);
+        </script>
     </body>
 </html>
